@@ -27,6 +27,7 @@ a gulp build system.  Some things it'll do for you out of the box:
 ```
 $ git clone git@github.com:Shift3/mean
 $ cd mean && npm install
+$ cp .env.sample .env
 $ gulp
 ```
 
