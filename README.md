@@ -45,6 +45,6 @@ and finally `**/*.js`.  This will ensure that your angular modules are put first
 folder.  
 * Changes to less, ejs, html templates should trigger a live reload.
 * ES6 is enabled by default, so go crazy wit' all dat new fangled js.
-* Use the (John Papa Style Guide)[https://github.com/johnpapa/angular-styleguide] when structuring your angular app.  Don't 
-pile all your states in your main module file, spread them out through out individual modules see the (Welcome Module)[https://github.com/Shift3/mean/blob/master/app/welcome/module.js] 
+* Use the [John Papa Style Guide](https://github.com/johnpapa/angular-styleguide) when structuring your angular app.  Don't 
+pile all your states in your main module file, spread them out through out individual modules see the [Welcome Module](https://github.com/Shift3/mean/blob/master/app/welcome/module.js) 
 for an example.
