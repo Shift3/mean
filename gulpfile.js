@@ -121,7 +121,7 @@ gulp.task('watch', function () {
       .pipe(livereload());
   });
 
-  gulp.watch(['.env'], ['env', 'dev-env']);
+  gulp.watch(['.env'], ['env']);
   gulp.watch(['app/*.js', 'app/**/*.js'], ['scripts']);
   gulp.watch('less/**/*.less', ['less']);
   gulp.watch('app/**/*.html', ['templates']);
