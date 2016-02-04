@@ -39,9 +39,13 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
     "gulp-watch": "^4.3.5",
+    "htmlify": "^0.1.0",
     "jshint": "^2.9.1",
     "mongoose": "^4.4.1",
     "morgan": "^1.6.1",
     "node-env-file": "^0.1.8"
+  },
+  "devDependencies": {
+    "gulp-angular-htmlify": "^2.3.0"
   }
 }

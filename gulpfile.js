@@ -4,6 +4,7 @@ var gulp = require('gulp'),
   env = require('node-env-file'), //create the env
   envfile = require('envfile'), //parse the env
   jshint = require('gulp-jshint'),
+  htmlify = require('gulp-angular-htmlify'),
   open = require('gulp-open'),
   nodemon = require('gulp-nodemon'),
   autoprefixer = require('gulp-autoprefixer'),
@@ -26,6 +27,7 @@ gulp.task('env', function () {
 
 gulp.task('templates', function () {
   gulp.src('./app/**/*.html')
+    .pipe(htmlify())
     .pipe(templateCache({
       standalone: true
     }))
@@ -126,11 +128,14 @@ gulp.task('watch', function () {
   gulp.watch('images/**/*.*', ['copy-img']);
 });
 
-gulp.task('serve', ['env', 'scripts', 'js-deps', 'css-deps', 'templates', 'less', 'copy-img', 'favicon'], function () {
+gulp.task('serve', ['env', 'scripts', 'js-deps', 'css-deps', 'templates', 'less', 'copy-img', 'favicon', 'watch'], function () {
   nodemon({
     script: 'app.js',
-    ext: 'js html'
+    ext: 'js html ejs',
+    ignore: ['node_modules']
   });
+
+  livereload.listen();
 });
 
 /**

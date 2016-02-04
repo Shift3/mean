@@ -19,4 +19,5 @@ a gulp build system.  Some things it'll do for you out of the box:
     * Font Awesome
 * LESS Compilation
 * Angular Template Cache 
-* File Watchers with Live Reload 
+* File Watchers with Live Reload
+* Nodemon for server restarts
