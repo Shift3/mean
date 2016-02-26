@@ -78,5 +78,5 @@ If you don't want gulp to delete files in the bucket that aren't in your local b
 ```
 To publish to your bucket, just use:
 ```
-gulp publish
+$ gulp publish
 ```
