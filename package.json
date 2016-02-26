@@ -45,5 +45,8 @@
     "morgan": "^1.6.1",
     "node-env-file": "^0.1.8",
     "gulp-angular-htmlify": "^2.3.0"
+  },
+  "devDependencies": {
+    "gulp-awspublish": "^3.0.1"
   }
 }

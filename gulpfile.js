@@ -20,6 +20,7 @@ var gulp = require('gulp'),
   plumber = require('gulp-plumber'),
   babel = require('gulp-babel'),
   iife = require('gulp-iife');
+  awspublish = require('gulp-awspublish');
 
 gulp.task('env', function () {
   env(__dirname + '/.env', {overwrite: true});
@@ -136,6 +137,24 @@ gulp.task('serve', ['env', 'scripts', 'js-deps', 'css-deps', 'templates', 'less'
   });
 
   livereload.listen();
+});
+
+gulp.task('publish', function() {
+  // user must manually create ~/.aws/credentials file, AWS SDK will automatically check for it
+  var publisher = awspublish.create({
+    region: '', //example: 'us-west-2'
+    params: {
+      Bucket: '' //example: 'epicapp.s3sandbox.com'
+    }
+  });
+  return gulp.src('./build/**/*.*')
+    .pipe(publisher.publish())
+    .pipe(publisher.cache())
+    // warning sync will delete files in your bucket that are not in your local folder.
+    .pipe(publisher.sync())
+     // print upload updates to console
+    .pipe(awspublish.reporter());
+      states: ['create', 'update', 'delete']
 });
 
 /**
