@@ -5,7 +5,7 @@ var express = require('express'),
   cookieParser = require('cookie-parser'),
   app = express();
 
-//View rendering, you can rip this out if your creating an API
+//View rendering, you can rip this out if you're creating an API
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
