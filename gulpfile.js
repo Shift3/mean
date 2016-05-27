@@ -94,13 +94,13 @@ gulp.task('copy-img', function () {
 gulp.task('css-deps', function () {
   gulp.src([
       './node_modules/bootstrap/dist/css/bootstrap.min.css',
-      './node_modules/fontawesome/css/font-awesome.min.css'
+      './node_modules/font-awesome/css/font-awesome.min.css'
       //Add your third party styles here
     ])
     .pipe(concat('deps.css'))
     .pipe(gulp.dest('./build/css'));
 
-  gulp.src('./node_modules/fontawesome/fonts/*.*')
+  gulp.src('./node_modules/font-awesome/fonts/*.*')
     .pipe(gulp.dest('./build/fonts'));
 
   gulp.src('./fonts/**/*.*')
