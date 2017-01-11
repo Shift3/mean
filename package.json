@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run cover --silent",
+    "mocha": "./node_modules/mocha/bin/_mocha --compilers js:babel-register --full-trace",
+    "cover": "babel-node node_modules/isparta/bin/isparta cover node_modules/mocha/bin/_mocha -- --recursive ./test"
   },
   "author": "",
   "license": "ISC",
@@ -47,6 +49,10 @@
     "gulp-angular-htmlify": "^2.3.0"
   },
   "devDependencies": {
-    "gulp-awspublish": "^3.0.1"
+    "chai": "^3.5.0",
+    "gulp-awspublish": "^3.0.1",
+    "isparta": "^4.0.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5"
   }
 }
